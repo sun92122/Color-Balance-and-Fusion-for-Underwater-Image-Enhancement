@@ -20,6 +20,8 @@ GAMMA = 4
 SIGMA = 5
 # 金字塔層數
 LEVELS = 7
+# 是否使用紅通道補償
+RED_COMPENSATION = True
 # 是否使用藍通道補償
 BLUE_COMPENSATION = False
 # 白平衡增益
@@ -166,10 +168,17 @@ def white_balance(img, gain=1.0):
     wb_img:
         White balanced image
     """
-    img_c = red_channel_compensation(img, alpha=ALPHA)
-    if DEBUG:
-        push_image_to_buffer(image_buffer)
-        push_image_to_buffer(image_buffer, img_c, "Red Channel Compensation")
+    
+    if RED_COMPENSATION:
+        img_c = red_channel_compensation(img, alpha=ALPHA)
+        if DEBUG:
+            push_image_to_buffer(image_buffer)
+            push_image_to_buffer(image_buffer, img_c, "Red Channel Compensation")
+    else:
+        img_c = img.copy()
+        if DEBUG:
+            push_image_to_buffer(image_buffer)
+            push_image_to_buffer(image_buffer)
 
     if BLUE_COMPENSATION:
         img_c = blue_channel_compensation(img_c, alpha=ALPHA)
@@ -439,6 +448,7 @@ if __name__ == "__main__":
         show_buffered_images(
             image_buffer,
             f"Alpha={ALPHA}, WB_Gain={WHITE_BALANCE_GAIN}, Blue_Comp={BLUE_COMPENSATION}, Gamma={GAMMA}, Sigma={SIGMA}, Levels={LEVELS}",
-            save_path=f"{img_path.removesuffix('.'+img_path.split('.')[-1])}_result.jpg")
+            save_path=f"{img_path.removesuffix('.'+img_path.split('.')[-1])}_debug.jpg")
+        save_image(result, f"{img_path.removesuffix('.'+img_path.split('.')[-1])}_result.jpg")
     else:
         show_image(result, "Final Result")

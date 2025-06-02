@@ -45,7 +45,7 @@ def save_image(img, filename):
     filename:
         output filename (path)
     """
-    temp_img = cv2.cvtColor(to_uint8(img), cv2.COLOR_RGB2BGR)
+    temp_img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     cv2.imwrite(filename, temp_img)
     print(f"Image saved as {filename}")
 
