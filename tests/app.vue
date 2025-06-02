@@ -10,10 +10,10 @@
       <div class="card flex justify-center">
         <ImageCompare class="shadow-lg rounded-2xl">
           <template #right>
-            <img :src="'/UIEB/' + image + '.jpg'" />
+            <img :src="'./UIEB/' + image + '.jpg'" />
           </template>
           <template #left>
-            <img :src="'/UIEB/' + image + '_result.jpg'" />
+            <img :src="'./UIEB/' + image + '_result.jpg'" />
           </template>
         </ImageCompare>
       </div>
@@ -28,10 +28,10 @@
       <div class="card flex justify-center">
         <ImageCompare class="shadow-lg rounded-2xl">
           <template #right>
-            <img :src="'/paper_sample/' + image + '.jpg'" />
+            <img :src="'./paper_sample/' + image + '.jpg'" />
           </template>
           <template #left>
-            <img :src="'/paper_sample/' + image + '_result.jpg'" />
+            <img :src="'./paper_sample/' + image + '_result.jpg'" />
           </template>
         </ImageCompare>
       </div>

@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "nuxt generate && echo sun92122.com > .output/public/CNAME && echo > .output/public/.nojekyll && gh-pages -d .output/public --dotfiles"
+    "deploy": "nuxt generate && echo > .output/public/.nojekyll && gh-pages -d .output/public --dotfiles"
   },
   "dependencies": {
     "@primeuix/themes": "^1.1.1",
@@ -19,6 +19,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@primevue/nuxt-module": "^4.3.5"
+    "@primevue/nuxt-module": "^4.3.5",
+    "gh-pages": "^6.3.0"
   }
 }
