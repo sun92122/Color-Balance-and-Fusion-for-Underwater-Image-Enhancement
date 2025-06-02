@@ -1,0 +1,1 @@
+import o from"./DAGjNQSM.js";import"./DBUFqs3-.js";import"./DGEOgZpe.js";import"./Bd1v25Ej.js";import"./UqBhjSKA.js";import"./Bq7lBisZ.js";import"./DmfvTtO6.js";import"./Bhs-7L0y.js";import"./DLu11L1N.js";import"./C3XLADME.js";var l={name:"OverlayPanel",extends:o,mounted:function(){console.warn("Deprecated since v4. Use Popover component instead.")}};export{l as default};
